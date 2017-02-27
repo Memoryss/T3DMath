@@ -25,16 +25,51 @@ namespace T3D {
 		void SetColumn(size_t iCol, const Vec3 &v);
 		Vec3 GetColumn(size_t iCol);
 
-		bool operator==(const Matrix33 &mat);
+		bool operator==(const Matrix33 &mat) const;
 
-		Matrix33 operator+(const Matrix33 &mat);
+		Matrix33 operator+(const Matrix33 &mat) const;
 
-		Matrix33 operator*(const Matrix33 &mat);
+		Matrix33 operator-(const Matrix33 &mat) const;
+
+		Matrix33 operator*(const Matrix33 &mat) const;
+
+		Matrix33 operator-() const;
+
+		Vec3 operator*(const Vec3 &v) const;
+
+		Matrix33 operator*(const float scale) const;
+
+		//矩阵转置
+		Matrix33 Transpose() const;
+
+		//逆矩阵
+		bool Inverse(Matrix33 &mat, float tolerance = 1e-06) const;
+
+		//行列式
+		float Determinant() const;
 
 	protected:
-		float m[3][3];
+		float m[3][3] = { 0 };
+	};
 
+	class Matrix44
+	{
+	public:
+		Matrix44();
+		Matrix44(float m00, float m01, float m02, float m03,
+			float m10, float m11, float m12, float m13,
+			float m20, float m21, float m22, float m23,
+			float m30, float m31, float m32, float m33);
 
+		Matrix44(const Matrix44 &mat);
+
+	protected:
+		union 
+		{
+			float m[4][4];
+			float _m[16];
+		};
+		
 	};
 
 }

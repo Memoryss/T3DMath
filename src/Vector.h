@@ -30,14 +30,14 @@ namespace T3D {
 		Vec2 * getValue();
 		const  Vec2 * getValue() const;
 
-		Vec2 operator-();
-		Vec2 operator-(const Vec2 &v);
+		Vec2 operator-() const;
+		Vec2 operator-(const Vec2 &v) const;
 
-		Vec2 operator+(const Vec2 &v);
+		Vec2 operator+(const Vec2 &v) const;
 
-		Vec2 operator*(const float a);
+		Vec2 operator*(const float a) const;
 
-		bool operator==(const Vec2 &v);
+		bool operator==(const Vec2 &v) const;
 
 		float Length() const;
 		float LengthSqr() const;
@@ -75,14 +75,14 @@ namespace T3D {
 		Vec3 * getValue();
 		const  Vec3 * getValue() const;
 
-		Vec3 operator-();
-		Vec3 operator-(const Vec3 &v);
+		Vec3 operator-() const;
+		Vec3 operator-(const Vec3 &v) const;
 
-		Vec3 operator+(const Vec3 &v);
+		Vec3 operator+(const Vec3 &v) const;
 
-		Vec3 operator*(const float a);
+		Vec3 operator*(const float a) const;
 
-		bool operator==(const Vec3 &v);
+		bool operator==(const Vec3 &v) const;
 
 		float Length() const;
 		float LengthSqr() const;
@@ -122,14 +122,14 @@ namespace T3D {
 		Vec4 * getValue();
 		const  Vec4 * getValue() const;
 
-		Vec4 operator-();
-		Vec4 operator-(const Vec4 &v);
+		Vec4 operator-() const;
+		Vec4 operator-(const Vec4 &v) const;
 
-		Vec4 operator+(const Vec4 &v);
+		Vec4 operator+(const Vec4 &v) const;
 
-		Vec4 operator*(const float a);
+		Vec4 operator*(const float a) const;
 
-		bool operator==(const Vec4 &v);
+		bool operator==(const Vec4 &v) const;
 
 		float Dot(const Vec4 &v);
 

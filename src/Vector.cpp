@@ -81,27 +81,27 @@ namespace T3D {
 		return this;
 	}
 
-	Vec2 Vec2::operator-()
+	Vec2 Vec2::operator-() const
 	{
 		return Vec2(-x, -y);
 	}
 
-	Vec2 Vec2::operator-(const Vec2 &v)
+	Vec2 Vec2::operator-(const Vec2 &v) const
 	{
 		return Vec2(x - v.x, y - v.y);
 	}
 
-	Vec2 Vec2::operator+(const Vec2 &v)
+	Vec2 Vec2::operator+(const Vec2 &v) const
 	{
 		return Vec2(x + v.x, y + v.y);
 	}
 
-	Vec2 Vec2::operator*(const float a)
+	Vec2 Vec2::operator*(const float a) const
 	{
 		return Vec2(x * a, y * a);
 	}
 
-	bool Vec2::operator==(const Vec2 &v)
+	bool Vec2::operator==(const Vec2 &v) const
 	{
 		return (x == v.x && y == v.y);
 	}
@@ -216,22 +216,22 @@ namespace T3D {
 		return this;
 	}
 
-	Vec3 Vec3::operator-()
+	Vec3 Vec3::operator-() const
 	{
 		return Vec3(-x, -y, -z);
 	}
 
-	Vec3 Vec3::operator-(const Vec3 &v)
+	Vec3 Vec3::operator-(const Vec3 &v) const
 	{
 		return Vec3(x - v.x, y - v.y, z - v.z);
 	}
 
-	Vec3 Vec3::operator+(const Vec3 &v)
+	Vec3 Vec3::operator+(const Vec3 &v) const
 	{
 		return Vec3(x + v.x, y + v.y, z + v.z);
 	}
 
-	Vec3 Vec3::operator*(const float a)
+	Vec3 Vec3::operator*(const float a) const
 	{
 		return Vec3(x * a, y * a, z * a);
 	}
@@ -276,12 +276,12 @@ namespace T3D {
 		z = x * v.y - y * v.x;
 	}
 
-	bool Vec3::operator==(const Vec3 &v)
+	bool Vec3::operator==(const Vec3 &v) const
 	{
 		return (x == v.x && y == v.y && z == v.z);
 	}
 
-	Vec3 & Vec3::operator=(const Vec3 &v)
+	Vec3 & Vec3::operator=(const Vec3 &v) 
 	{
 		x = v.x;
 		y = v.y;
@@ -289,7 +289,7 @@ namespace T3D {
 		return *this;
 	}
 
-	float & Vec4::operator[](int index)
+	float & Vec4::operator[](int index) 
 	{
 		assert(index < 4);
 		return (&x)[index];
@@ -361,22 +361,22 @@ namespace T3D {
 		return this;
 	}
 
-	Vec4 Vec4::operator-()
+	Vec4 Vec4::operator-() const
 	{
 		return Vec4(-x, -y, -z, -w);
 	}
 
-	Vec4 Vec4::operator-(const Vec4 &v)
+	Vec4 Vec4::operator-(const Vec4 &v) const
 	{
 		return Vec4(x - v.x, y - v.y, z - v.z, w - v.w);
 	}
 
-	Vec4 Vec4::operator+(const Vec4 &v)
+	Vec4 Vec4::operator+(const Vec4 &v) const
 	{
 		return Vec4(x + v.x, y + v.y, z + v.z, w + v.w);
 	}
 
-	Vec4 Vec4::operator*(const float a)
+	Vec4 Vec4::operator*(const float a) const
 	{
 		return Vec4(x * a, y * a, z * a, w * a);
 	}
@@ -386,7 +386,7 @@ namespace T3D {
 		return x * v.x + y * v.y + z * v.z + w * v.w;
 	}
 
-	bool Vec4::operator==(const Vec4 &v)
+	bool Vec4::operator==(const Vec4 &v) const
 	{
 		return (x == v.x && y == v.y && z == v.z && w == v.w);
 	}
