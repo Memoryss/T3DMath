@@ -5,6 +5,7 @@
 #include <assert.h>
 
 #include "TMath.h"
+#include "Matrix.h"
 
 namespace T3D {
 
@@ -32,7 +33,7 @@ namespace T3D {
 
 	Quaternion::Quaternion(const Vec3 &xaxis, const Vec3 &yaxis, const Vec3 &zaxis)
 	{
-		this->FromAxis(xaxis, yaxis, zaxis);
+		this->FromAxes(xaxis, yaxis, zaxis);
 	}
 
 	void Quaternion::swap(Quaternion &quat)
@@ -95,7 +96,7 @@ namespace T3D {
 		}
 	}
 
-	void Quaternion::ToRotationMatrix(Matrix33 &kRot)
+	void Quaternion::ToRotationMatrix(Matrix33 &kRot) const
 	{
 		float fTx = x + x;
 		float fTy = y + y;
@@ -138,7 +139,7 @@ namespace T3D {
 		float fsin_inv = 1 / Math::FastSin(value);
 		rAxis.x = x * fsin_inv;
 		rAxis.y = y * fsin_inv;
-		rAxis.z = z * fsin_inv
+		rAxis.z = z * fsin_inv;
 	}
 
 	void Quaternion::FromAxes(const Vec3 &xaxis, const Vec3 &yaxis, const Vec3 &zaxis)
@@ -261,16 +262,19 @@ namespace T3D {
 	float Quaternion::getRoll() const
 	{
 		//TODO
+		return 0;
 	}
 
 	float Quaternion::getPitch() const
 	{
 		//TODO
+		return 0;
 	}
 
 	float Quaternion::getYaw() const
 	{
 		//TODO
+		return 0;
 	}
 
 	Quaternion & Quaternion::operator=(const Quaternion &quat)
@@ -279,6 +283,8 @@ namespace T3D {
 		x = quat.x;
 		y = quat.y;
 		z = quat.z;
+
+		return *this;
 	}
 
 }

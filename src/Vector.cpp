@@ -271,9 +271,11 @@ namespace T3D {
 
 	Vec3 Vec3::Cross(const Vec3 &v)
 	{
-		x = y * v.z - z * v.y;
-		y = z * v.x - x * v.z;
-		z = x * v.y - y * v.x;
+		Vec3 v3;
+		v3.x = y * v.z - z * v.y;
+		v3.y = z * v.x - x * v.z;
+		v3.z = x * v.y - y * v.x;
+		return v3;
 	}
 
 	bool Vec3::operator==(const Vec3 &v) const

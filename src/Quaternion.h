@@ -1,16 +1,19 @@
 #ifndef __QUATERNION_H__
 #define __QUATERNION_H__
 
-#include "Matrix.h"
+#include "Vector.h"
 
 namespace T3D {
 
 	/************************************************************************/
 	/* 四元数                                                                     */
 	/************************************************************************/
+	
+	class Matrix33;
 
 	class Quaternion
 	{
+	public:
 		float w; //实部
 		float x; // i
 		float y; // j
@@ -35,7 +38,7 @@ namespace T3D {
 		float & operator[] (const size_t index);
 
 		void FromRotationMatrix(const Matrix33 &mat);
-		void ToRotationMatrix(Matrix33 &mat);
+		void ToRotationMatrix(Matrix33 &mat) const;
 
 		//统一使用角度表示 如果需要弧度，自行转化
 		void FromAngleAxis(const float degree, const Vec3 &rAxis);

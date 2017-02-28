@@ -2,6 +2,7 @@
 #define __MATRIX_H__
 
 #include "Vector.h"
+#include "Quaternion.h"
 
 namespace T3D {
 
@@ -63,6 +64,10 @@ namespace T3D {
 
 		Matrix44(const Matrix44 &mat);
 
+		Matrix44(const Matrix33 &mat);
+
+		Matrix44(const Quaternion &rot);
+
 		void swap(Matrix44 &mat);
 
 		float * operator[](size_t row);
@@ -76,6 +81,7 @@ namespace T3D {
 		Matrix44 operator+(const Matrix44 &mat) const;
 		Matrix44 operator-(const Matrix44 &mat) const;
 		bool operator==(const Matrix44 &mat) const;
+		void operator=(const Matrix33 &mat3);
 
 		Matrix44 transpose() const;
 		float determinant() const;
@@ -96,14 +102,12 @@ namespace T3D {
 		static Matrix44 getScale(const Vec3 &v);
 		static Matrix44 getScale(float tx, float ty, float tz);
 
-
+		static const Matrix44 ZERO;
+		static const Matrix44 ZEROAFFINE;
+		static const Matrix44 IDENTITY;
 
 	protected:
-		union 
-		{
-			float m[4][4];
-			float _m[16];
-		};
+		float m[4][4] = {0.0};
 		
 	};
 
