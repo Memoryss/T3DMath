@@ -63,6 +63,41 @@ namespace T3D {
 
 		Matrix44(const Matrix44 &mat);
 
+		void swap(Matrix44 &mat);
+
+		float * operator[](size_t row);
+		const float * operator[](size_t row) const;
+
+		Matrix44 operator*(const Matrix44 &mat) const;
+		Vec3 operator*(const Vec3 &v) const;
+		Vec4 operator*(const Vec4 &v) const;
+		Matrix44 operator*(float scale) const;
+
+		Matrix44 operator+(const Matrix44 &mat) const;
+		Matrix44 operator-(const Matrix44 &mat) const;
+		bool operator==(const Matrix44 &mat) const;
+
+		Matrix44 transpose() const;
+		float determinant() const;
+		Matrix44 inverse() const;
+
+		//Æ½ÒÆ
+		void setTrans(const Vec3 &v);
+		Vec3 getTrans();
+
+		void makeTrans(const Vec3 &v);
+		void makeTrans(float tx, float ty, float tz);
+
+		static Matrix44 getTrans(const Vec3 &v);
+		static Matrix44 getTrans(float tx, float ty, float tz);
+
+		//Ëõ·Å
+		void setScale(const Vec3 &v);
+		static Matrix44 getScale(const Vec3 &v);
+		static Matrix44 getScale(float tx, float ty, float tz);
+
+
+
 	protected:
 		union 
 		{
