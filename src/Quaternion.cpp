@@ -260,17 +260,17 @@ namespace T3D {
 
 	float Quaternion::getRoll() const
 	{
-
+		//TODO
 	}
 
 	float Quaternion::getPitch() const
 	{
-
+		//TODO
 	}
 
 	float Quaternion::getYaw() const
 	{
-
+		//TODO
 	}
 
 	Quaternion & Quaternion::operator=(const Quaternion &quat)
