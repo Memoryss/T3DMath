@@ -124,8 +124,8 @@ namespace T3D {
 
 	void Quaternion::FromAngleAxis(const float degree, const Vec3 &rAxis)
 	{
-		w = Math::FastCos(degree * 0.5);
-		float sinDg = Math::FastSin(degree * 0.5);
+		w = Math::FastCos(degree * 0.5f);
+		float sinDg = Math::FastSin(degree * 0.5f);
 		x = sinDg * rAxis.x;
 		y = sinDg * rAxis.y;
 		z = sinDg * rAxis.z;

@@ -109,7 +109,7 @@ namespace T3D {
 	float Vec2::Length() const
 	{
 		//TODO 可以使用优化算法开根号
-		return sqrt(x * x + y * y);
+		return (float)sqrt(x * x + y * y);
 	}
 
 	float Vec2::LengthSqr() const
@@ -238,7 +238,7 @@ namespace T3D {
 
 	float Vec3::Length() const
 	{
-		return sqrt(x * x + y * y + z * z);
+		return (float)sqrt(x * x + y * y + z * z);
 	}
 
 	float Vec3::LengthSqr() const
