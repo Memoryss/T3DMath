@@ -117,11 +117,14 @@ namespace T3D {
 		return x * x + y * y;
 	}
 
-	void Vec2::Normalize()
+	float Vec2::Normalize()
 	{
-		float length_inv = 1 / Length();
+		float len = Length();
+		float length_inv = 1 / len;
 		x *= length_inv;
 		y *= length_inv;
+
+		return len;
 	}
 
 	float Vec2::Distance(const Vec2 &v)
@@ -256,12 +259,15 @@ namespace T3D {
 		return (*this - v).LengthSqr();
 	}
 
-	void Vec3::Normalize()
+	float Vec3::Normalize()
 	{
-		float length_inv = 1 / Length();
+		float len = Length();
+		float length_inv = 1 / len;
 		x *= length_inv;
 		y *= length_inv;
 		z *= length_inv;
+
+		return len;
 	}
 
 	float Vec3::Dot(const Vec3 &v)

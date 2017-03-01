@@ -3,12 +3,14 @@ set (PUB_HDR
 	Vector.h
 	Quaternion.h
 	TMath.h
+	Plane.h
 )
 
 add_library(T3DMath
 	Matrix.cpp
 	Vector.cpp
 	Quaternion.cpp
+	Plane.cpp
 	${PUB_HDR}
 )
 

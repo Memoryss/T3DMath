@@ -45,7 +45,7 @@ namespace T3D {
 		float Distance(const Vec2 &v);
 		float DistanceSqr(const Vec2 &v);
 
-		void Normalize();
+		float Normalize();
 
 		float Dot(const Vec2 &v);
 	};
@@ -90,7 +90,7 @@ namespace T3D {
 		float Distance(const Vec3 &v);
 		float DistanceSqr(const Vec3 &v);
 
-		void Normalize();
+		float Normalize();
 
 		float Dot(const Vec3 &v);
 		
