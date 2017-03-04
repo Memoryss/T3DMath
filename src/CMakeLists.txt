@@ -4,6 +4,7 @@ set (PUB_HDR
 	Quaternion.h
 	TMath.h
 	Plane.h
+	Frustum.h
 )
 
 add_library(T3DMath
@@ -11,6 +12,7 @@ add_library(T3DMath
 	Vector.cpp
 	Quaternion.cpp
 	Plane.cpp
+	Frustum.cpp
 	${PUB_HDR}
 )
 
