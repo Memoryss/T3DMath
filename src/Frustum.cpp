@@ -71,7 +71,12 @@ namespace T3D {
 		mat = m_projectionMatrix * m_viewMatrix;
 	}
 
-	void Frustum::UpdateFrustum(const Vec3 &pos, const Quaternion &orientation)
+	void Frustum::UpdateProj()
+	{
+
+	}
+
+	void Frustum::UpdateView(const Vec3 &pos, const Quaternion &orientation)
 	{
 		// TODO
 		//view矩阵可以看成，通过变化将相机移到世界空间的坐标的原点并且方向轴重合
@@ -80,6 +85,8 @@ namespace T3D {
 		
 		Matrix44 rot(orientation);  //根据四元数创建变化矩阵
 		Matrix44 rot_inv = rot.inverse();  //变换矩阵求逆
+
+		m_viewMatrix = rot_inv * trans;   //先将物体移动到世界坐标系原点，在进行旋转
 	}
 
 	bool Frustum::operator==(const Frustum &rhs)

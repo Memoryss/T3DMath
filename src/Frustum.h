@@ -56,7 +56,9 @@ namespace T3D {
 		void GetViewProjectionMatrix(Matrix44 &mat) const;
 
 	protected:
-		void UpdateFrustum(const Vec3 &pos, const Quaternion &orientation);
+		void UpdateView(const Vec3 &pos, const Quaternion &orientation);
+
+		void UpdateProj();
 
 	protected:
 		ProjectionType m_projType; //投影类型
