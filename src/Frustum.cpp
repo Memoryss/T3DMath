@@ -116,7 +116,7 @@ namespace T3D {
 		m_viewMatrix = rot_inv * trans;   //先将物体移动到世界坐标系原点，在进行旋转
 	}
 
-	void Frustum::Update(const Vec3 &pos, const Quaternion &orientation)
+	void Frustum::UpdateFrustum(const Vec3 &pos, const Quaternion &orientation)
 	{
 		//更新相机矩阵
 		UpdateView(pos, orientation);

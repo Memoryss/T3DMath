@@ -58,7 +58,7 @@ namespace T3D {
 		const Vec3 GetCorners(size_t index);
 
 	protected:
-		void Update(const Vec3 &pos, const Quaternion &orientation);
+		void UpdateFrustum(const Vec3 &pos, const Quaternion &orientation);
 
 	private:
 		void UpdateView(const Vec3 &pos, const Quaternion &orientation);
