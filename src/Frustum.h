@@ -55,10 +55,17 @@ namespace T3D {
 		const Matrix44 & GetProjectionMatrix() const;
 		void GetViewProjectionMatrix(Matrix44 &mat) const;
 
+		const Vec3 GetCorners(size_t index);
+
 	protected:
+		void Update(const Vec3 &pos, const Quaternion &orientation);
+
+	private:
 		void UpdateView(const Vec3 &pos, const Quaternion &orientation);
 
 		void UpdateProj();
+
+		void UpdateOrtho();
 
 	protected:
 		ProjectionType m_projType; //投影类型
@@ -72,6 +79,8 @@ namespace T3D {
 		Matrix44 m_projectionMatrix;
 
 		Plane m_planes[FRUSTUM_PLANES];
+
+		Vec3 m_corners[8]; //视锥体的八个顶点坐标
 	};
 }
 #endif // !
