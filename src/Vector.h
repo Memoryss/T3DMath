@@ -48,6 +48,13 @@ namespace T3D {
 		float Normalize();
 
 		float Dot(const Vec2 &v);
+
+		static const Vec2 ZERO;
+		static const Vec2 UNIT_X;
+		static const Vec2 UNIT_Y;
+		static const Vec2 NEGATIVE_UNIT_X;
+		static const Vec2 NEGATIVE_UNIT_Y;
+		static const Vec2 UNIT_SCALE;
 	};
 
 	class Vec3
@@ -95,6 +102,15 @@ namespace T3D {
 		float Dot(const Vec3 &v);
 		
 		Vec3 Cross(const Vec3 &v);
+
+		static const Vec3 ZERO;
+		static const Vec3 UNIT_X;
+		static const Vec3 UNIT_Y;
+		static const Vec3 UNIT_Z;
+		static const Vec3 NEGATIVE_UNIT_X;
+		static const Vec3 NEGATIVE_UNIT_Y;
+		static const Vec3 NEGATIVE_UNIT_Z;
+		static const Vec3 UNIT_SCALE;
 	};
 
 	class Vec4
@@ -135,6 +151,8 @@ namespace T3D {
 
 		Vec3 XYZ() const;
 		Vec2 XY() const;
+
+		static const Vec4 ZERO;
 	};
 
 }
