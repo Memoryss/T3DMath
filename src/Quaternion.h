@@ -34,6 +34,8 @@ namespace T3D {
 
 		void swap(Quaternion &quat);
 
+		void Identity();
+
 		float operator[] (const size_t index) const;
 		float & operator[] (const size_t index);
 

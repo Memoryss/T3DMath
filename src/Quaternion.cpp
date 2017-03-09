@@ -44,6 +44,14 @@ namespace T3D {
 		std::swap(quat.z, z);
 	}
 
+	void Quaternion::Identity()
+	{
+		x = 0.0f;
+		y = 0.0f;
+		z = 0.0f;
+		w = 1.0f;
+	}
+
 	float Quaternion::operator[](const size_t index) const
 	{
 		assert(index < 4);
