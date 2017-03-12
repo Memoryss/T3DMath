@@ -32,7 +32,10 @@ namespace T3D {
 		static float Arccos(float value);
 
 		//像素转化 将24位无alpha转为uint32 brga存储  (bmp brg)
-		static uint32 unit8BGR_to_uint32BGRA(const uint8 * const ch);
+		static uint32 uint8BGR_to_uint32BGRA(const uint8 * const ch);
+
+		//像素比例相乘
+		static uint32 ColorScaleFloat(uint32 color, float scale);
 
 		//将计算好的sin cos保存起来
 		static float cos_look[361];
@@ -100,12 +103,21 @@ namespace T3D {
 		}
 	}
 
-	uint32 Math::unit8BGR_to_uint32BGRA(const uint8 * const ch)
+	uint32 Math::uint8BGR_to_uint32BGRA(const uint8 * const ch)
 	{
 		//BMP中 颜色排列是bgr
 		uint32 texel = 0;
 		texel += (*ch << 24 ) | (*(ch + 1) << 16) | (*(ch + 2) << 8) | 0xff;  //uint32 bgra
 		return texel;
+	}
+
+	uint32 Math::ColorScaleFloat(uint32 color, float scale)
+	{
+		//TODO 可以做一下优化
+		return (int)((color & 0xff000000 >> 24) * scale) << 24 |
+			(int)((color & 0x00ff0000 >> 16) * scale) << 16 |
+			(int)((color & 0x0000ff00 >> 8) * scale) << 8 |
+			(int)((color & 0x000000ff >> 0) * scale) << 0;
 	}
 }
 
