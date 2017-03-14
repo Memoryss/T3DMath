@@ -68,6 +68,8 @@ namespace T3D {
 		float getRoll() const;
 		float getPitch() const;
 		float getYaw() const;
+
+		static const Quaternion IDENTITY;
 	};
 
 }
