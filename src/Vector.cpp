@@ -417,6 +417,11 @@ namespace T3D {
 		return (x == v.x && y == v.y && z == v.z && w == v.w);
 	}
 
+	Vec4::operator Vec3() const
+	{
+		return Vec3(x, y, z);
+	}
+
 	Vec4 & Vec4::operator=(const Vec4 &v)
 	{
 		x = v.x;

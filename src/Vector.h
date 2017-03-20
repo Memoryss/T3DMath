@@ -147,6 +147,8 @@ namespace T3D {
 
 		bool operator==(const Vec4 &v) const;
 
+		operator Vec3() const;
+
 		float Dot(const Vec4 &v);
 
 		Vec3 XYZ() const;
