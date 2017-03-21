@@ -47,7 +47,7 @@ namespace T3D {
 
 		float Normalize();
 
-		float Dot(const Vec2 &v);
+		float Dot(const Vec2 &v) const;
 
 		static const Vec2 ZERO;
 		static const Vec2 UNIT_X;
@@ -99,9 +99,9 @@ namespace T3D {
 
 		float Normalize();
 
-		float Dot(const Vec3 &v);
+		float Dot(const Vec3 &v) const;
 		
-		Vec3 Cross(const Vec3 &v);
+		Vec3 Cross(const Vec3 &v) const;
 
 		static const Vec3 ZERO;
 		static const Vec3 UNIT_X;
@@ -149,7 +149,7 @@ namespace T3D {
 
 		operator Vec3() const;
 
-		float Dot(const Vec4 &v);
+		float Dot(const Vec4 &v) const;
 
 		Vec3 XYZ() const;
 		Vec2 XY() const;

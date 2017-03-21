@@ -155,7 +155,7 @@ namespace T3D {
 		return (*this - v).LengthSqr();
 	}
 
-	float Vec2::Dot(const Vec2 &v)
+	float Vec2::Dot(const Vec2 &v) const
 	{
 		return x * v.x + y * v.y;
 	}
@@ -288,12 +288,12 @@ namespace T3D {
 		return len;
 	}
 
-	float Vec3::Dot(const Vec3 &v)
+	float Vec3::Dot(const Vec3 &v) const
 	{
 		return x * v.x + y * v.y + z * v.z;
 	}
 
-	Vec3 Vec3::Cross(const Vec3 &v)
+	Vec3 Vec3::Cross(const Vec3 &v) const
 	{
 		Vec3 v3;
 		v3.x = y * v.z - z * v.y;
@@ -407,7 +407,7 @@ namespace T3D {
 		return Vec4(x * a, y * a, z * a, w * a);
 	}
 
-	float Vec4::Dot(const Vec4 &v)
+	float Vec4::Dot(const Vec4 &v) const
 	{
 		return x * v.x + y * v.y + z * v.z + w * v.w;
 	}
