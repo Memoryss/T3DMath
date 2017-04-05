@@ -40,6 +40,14 @@ namespace T3D {
 		//将计算好的sin cos保存起来
 		static float cos_look[361];
 		static float sin_look[361];
+
+		//快速插值
+		template<typename T>
+		static T FastLerp(const T &a, const T &b, float ratio)
+		{
+			T c = a * (1.f - ratio) + b * ratio;
+			return c;
+		}
 	};
 
 	void Math::BuildSinCosTables()
