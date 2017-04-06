@@ -12,6 +12,8 @@
 #define DEG_TO_RAN(ang) ((ang) * PI / 180.0f)
 #define RAD_TO_DEG(rads) ((rads) * 180.0f / PI)
 
+#define FLOAT_PRECISION 0.001f
+
 typedef unsigned int uint32;
 typedef unsigned char uint8;
 
