@@ -47,7 +47,7 @@ namespace T3D {
 
 		float Normalize();
 
-		float Dot(const Vec2 &v);
+		float Dot(const Vec2 &v) const;
 
 		void Swap(Vec2 &v);
 
@@ -101,9 +101,9 @@ namespace T3D {
 
 		float Normalize();
 
-		float Dot(const Vec3 &v);
+		float Dot(const Vec3 &v) const;
 		
-		Vec3 Cross(const Vec3 &v);
+		Vec3 Cross(const Vec3 &v) const;
 
 		void Swap(Vec3 &v);
 
@@ -151,7 +151,9 @@ namespace T3D {
 
 		bool operator==(const Vec4 &v) const;
 
-		float Dot(const Vec4 &v);
+		operator Vec3() const;
+
+		float Dot(const Vec4 &v) const;
 
 		Vec3 XYZ() const;
 		Vec2 XY() const;

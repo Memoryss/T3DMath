@@ -9,9 +9,9 @@
 
 namespace T3D {
 
+	const Quaternion Quaternion::IDENTITY(1.f, 0.f, 0.f, 0.f);
 
-
-	Quaternion::Quaternion() : w(0), x(0), y(0), z(0)
+	Quaternion::Quaternion() : w(1.f), x(0), y(0), z(0)
 	{
 
 	}
