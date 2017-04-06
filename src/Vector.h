@@ -49,6 +49,8 @@ namespace T3D {
 
 		float Dot(const Vec2 &v);
 
+		void Swap(Vec2 &v);
+
 		static const Vec2 ZERO;
 		static const Vec2 UNIT_X;
 		static const Vec2 UNIT_Y;
@@ -103,6 +105,8 @@ namespace T3D {
 		
 		Vec3 Cross(const Vec3 &v);
 
+		void Swap(Vec3 &v);
+
 		static const Vec3 ZERO;
 		static const Vec3 UNIT_X;
 		static const Vec3 UNIT_Y;
@@ -151,6 +155,8 @@ namespace T3D {
 
 		Vec3 XYZ() const;
 		Vec2 XY() const;
+
+		void Swap(Vec4 &v);
 
 		static const Vec4 ZERO;
 	};

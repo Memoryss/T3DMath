@@ -160,6 +160,13 @@ namespace T3D {
 		return x * v.x + y * v.y;
 	}
 
+	void Vec2::Swap(Vec2 & v)
+	{
+		Vec2 temp = v;
+		v = *this;
+		*this = temp;
+	}
+
 
 	/************************************************************************/
 	/* vec3                                                                     */
@@ -302,6 +309,13 @@ namespace T3D {
 		return v3;
 	}
 
+	void Vec3::Swap(Vec3 & v)
+	{
+		Vec3 temp = v;
+		v = *this;
+		*this = temp;
+	}
+
 	bool Vec3::operator==(const Vec3 &v) const
 	{
 		return (x == v.x && y == v.y && z == v.z);
@@ -435,5 +449,11 @@ namespace T3D {
 	Vec2 Vec4::XY() const
 	{
 		return Vec2(x, y);
+	}
+	void Vec4::Swap(Vec4 & v)
+	{
+		Vec4 temp = v;
+		v = *this;
+		*this = v;
 	}
 }
